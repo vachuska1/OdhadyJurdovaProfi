@@ -21,7 +21,7 @@ const schema = z.object({
 })
 
 const SENDER_EMAIL = "onboarding@resend.dev" // Changed to Resend's default sender domain
-const RECIPIENT_EMAIL = "aless.vachuska@seznam.cz"
+const RECIPIENT_EMAIL = "info@odhadyjurdova.cz"
 
 const RESEND_KEY = process.env.RESEND_API_KEY
 const resend = RESEND_KEY ? new Resend(RESEND_KEY) : null
