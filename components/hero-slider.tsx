@@ -6,13 +6,7 @@ import useEmblaCarousel from "embla-carousel-react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
-const IMAGES = [
-  "/images/hero-1.png",
-  "/images/hero-2.png",
-  "/images/hero-3.png",
-  "/images/hero-4.png",
-  "/images/hero-5.png",
-]
+const IMAGES = ["/images/hero-1.png", "/images/hero-2.png", "/images/hero-3.png", "/images/hero-4.png"]
 
 const AUTOPLAY_INTERVAL = 5000 // 5 seconds
 

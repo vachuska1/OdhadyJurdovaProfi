@@ -1,7 +1,7 @@
 export const translations = {
   header: {
     title: {
-      cs: "Ing. Natálie Jurdová - Odhadce nemovitostí",
+      cs: "Ing. Natálie Jurdová - Odhadkyně nemovitostí",
       en: "Ing. Natálie Jurdová - Real Estate Appraiser",
     },
     nav: {
@@ -13,8 +13,22 @@ export const translations = {
   },
   hero: {
     heading: {
-      cs: "Ing. Natálie Jurdová - Odhadce nemovitostí",
+      cs: "Ing. Natálie Jurdová - Odhadkyně nemovitostí",
       en: "Ing. Natálie Jurdová - Real Estate Appraiser",
+    },
+  },
+  introSection: {
+    heading: {
+      cs: "Ing. Natálie Jurdová – odhadkyně nemovitostí",
+      en: "Ing. Natálie Jurdová – Real Estate Appraiser",
+    },
+    text: {
+      cs: "Pomohu vám zjistit hodnotu vaší nemovitosti ve chvíli, kdy to nejvíc potřebujete. Ať už prodáváte dům bez realitní kanceláře, řešíte dědictví, vypořádání majetku, nebo se jen chcete zorientovat v hodnotě svého majetku – připravím pro vás srozumitelný a spolehlivý odhad. Ocením byty, domy, pozemky i rekreační a zemědělské objekty. Ozvěte se mi, ráda s vámi proberu, co přesně potřebujete.",
+      en: "I will help you find out the value of your property when you need it most. Whether you are selling a house without a real estate agency, dealing with inheritance, property settlement, or just want to get an idea of your property's value – I will prepare a clear and reliable appraisal for you. I appraise apartments, houses, land, as well as recreational and agricultural properties. Contact me, I will be happy to discuss exactly what you need.",
+    },
+    button: {
+      cs: "Kontaktujte mě",
+      en: "Contact me",
     },
     introQuestion: {
       cs: "Kdy mě budete potřebovat?",
@@ -41,20 +55,27 @@ export const translations = {
       en: "In the field of real estate appraisals, I can provide you with the following services:",
     },
     marketAppraisal: {
-      title: { cs: "Tržní odhad:", en: "Market Appraisal:" },
+      title: { cs: "Stanovení obvyklé ceny:", en: "Determination of Customary Price:" },
       description: {
-        cs: "Díky odhadu ceny nemovitosti budete vědět, za jakou částku by bylo možné k datu ocenění daný a v daném místě a čase majetek kopit nebo prodat. Tržní odhad využijete při prodeji bez realitní kanceláře, při žádostech o dotace, při dědickém řízení nebo pokud budete mít zájem zjistit, jakou hodnotu má Vaše nemovitost.",
-        en: "Thanks to the property valuation, you will know the amount for which the given property could be bought or sold at the date of valuation, in the given place and time. You will use a market appraisal when selling without a real estate agency, when applying for subsidies, during inheritance proceedings, or if you are interested in finding out the value of your property.",
+        cs: "V některých životních situacích – například při dědictví nebo vypořádání majetku mezi manžely – je potřeba určit takzvanou cenu obvyklou. Jde o odhad ceny nemovitosti, která by byla dosažena za obvyklých podmínek ke dni ocenění. Nejde o tržní odhad pro banku, nebo pro případ prodeje, ale o právně uznávaný základ pro spravedlivé rozdělení majetku.",
+        en: "In some life situations – for example, during inheritance or property settlement between spouses – it is necessary to determine the so-called customary price. This is an estimate of the property's price that would be achieved under usual conditions on the date of valuation. It is not a market appraisal for a bank or for a sale, but a legally recognized basis for fair property distribution.",
       },
     },
     ascertainedPrice: {
-      title: { cs: "Stanovení zjištěné ceny", en: "Determination of Ascertained Price" },
+      title: { cs: "Stanovení tržní hodnoty:", en: "Determination of Market Value:" },
       description: {
-        cs: "Cenu zjištěnou budete potřebovat pro daň z převodu nemovitosti, daň darovací, pro dědické řízení nebo například pro potřeby rozvodového řízení.",
-        en: "You will need the ascertained price for real estate transfer tax, gift tax, inheritance proceedings, or for divorce proceedings, for example.",
+        cs: "Chcete mít jasno, jakou hodnotu má vaše nemovitost? Tržní hodnota odráží částku, za kterou by se daná nemovitost mohla reálně prodat na volném trhu – tedy mezi běžnými kupujícími a prodávajícími. Tento typ ocenění se často využívá při prodeji bez realitní kanceláře, při rozhodování o investicích, nebo jen pro vaši vlastní informaci o hodnotě majetku. Odhad připravuji s důrazem na aktuální situaci na trhu, lokalitu i konkrétní stav nemovitosti – abyste se mohli rozhodovat s jistotou.",
+        en: "Do you want to be clear about the value of your property? Market value reflects the amount for which the given property could realistically be sold on the open market – that is, between ordinary buyers and sellers. This type of valuation is often used when selling without a real estate agency, when making investment decisions, or just for your own information about the property's value. I prepare the appraisal with an emphasis on the current market situation, location, and specific condition of the property – so you can make decisions with confidence.",
       },
     },
     rentAmount: {
+      title: { cs: "Stanovení zjištěné ceny:", en: "Determination of Ascertained Price:" },
+      description: {
+        cs: "Cena zjištěná je cena nemovitosti stanovená podle platné vyhlášky – nejde tedy o tržní odhad, ale o výpočet podle přesně daných pravidel. Tato cena se využívá především pro daňové účely, v některých případech při převodu majetku nebo ve specifických situacích, kdy ji vyžadují úřady. Pokud potřebujete ocenění nemovitosti podle zákona a příslušné metodiky, připravím vám odhad, který bude odpovídat všem legislativním požadavkům.",
+        en: "The ascertained price is the price of the property determined according to the valid decree – it is not a market appraisal, but a calculation according to precisely defined rules. This price is primarily used for tax purposes, in some cases for property transfer, or in specific situations where authorities require it. If you need a property valuation according to the law and relevant methodology, I will prepare an appraisal that will comply with all legislative requirements.",
+      },
+    },
+    rentAmountOriginal: {
       title: { cs: "Stanovení výše nájemného:", en: "Determination of Rent Amount:" },
       description: {
         cs: "Chcete začít pronajímat nemovitost a nevíte, jak vysoké nájemné stanovit? Obraťte se na mě a vypočítám pro Vás výši nájemného daného objektu. Samozřejmostí je také stanovení výnosové hodnoty dané nemovitosti.",
@@ -69,12 +90,12 @@ export const translations = {
       title: { cs: "Pozemky", en: "Land" },
       types: [
         {
-          cs: "Stavební (tj. určené územním plánem jako zastavěné či určené k zastavění)",
-          en: "Building plots (i.e., designated by the zoning plan as built-up or intended for building)",
+          cs: "Stavební",
+          en: "Building plots",
         },
         {
-          cs: "Zemědělské (tj. určené dle BPEJ)",
-          en: "Agricultural (i.e., determined according to BPEJ - Soil-Ecological Units)",
+          cs: "Zemědělské",
+          en: "Agricultural",
         },
         {
           cs: "Ostatní (tj. lesní pozemky, vodní plochy)",
@@ -92,12 +113,7 @@ export const translations = {
     },
     commercial: {
       title: { cs: "Komerční objekty", en: "Commercial Properties" },
-      types: [
-        { cs: "Kanceláře", en: "Offices" },
-        { cs: "Budovy a haly", en: "Buildings and halls" },
-        { cs: "Prostory pro výrobu", en: "Production premises" },
-        { cs: "Dílny a sklady", en: "Workshops and warehouses" },
-      ],
+      types: [], // Removed specific types as requested
     },
   },
   qualifications: {
@@ -145,6 +161,18 @@ export const translations = {
       purposeValuation: { cs: "Účel ocenění nemovitosti", en: "Purpose of property valuation" },
       note: { cs: "Poznámka nebo další informace", en: "Note, or further information" },
       send: { cs: "Odeslat", en: "Send" },
+      personalDataConsent: {
+        cs: "Souhlasím se zpracováním osobních údajů",
+        en: "I agree to the processing of personal data",
+      },
+      privacyPolicyLink: {
+        cs: "/ochrana-osobnich-udaju",
+        en: "/privacy-policy",
+      },
+      privacyPolicyLinkText: {
+        cs: "osobních údajů",
+        en: "personal data",
+      },
       subjectOptions: [
         { value: "family-house", cs: "Rodinný dům", en: "Family house" },
         { value: "apartment", cs: "Byt", en: "Apartment" },
