@@ -66,14 +66,14 @@ export default function ContactSection() {
           {/* Map */}
           <div className="mt-8 h-[300px] w-full overflow-hidden rounded-lg shadow-md">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2586.0000000000005!2d15.999999999999998!3d49.200000000000000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4706111111111111%3A0x1111111111111111!2sKlu%C4%8Dov%2078%2C%20675%2052%20Klu%C4%8Dov!5e0!3m2!1sen!2scz!4v1719500000000!5m2!1sen!2scz"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5209.999999999999!2d15.936160082974734!3d49.16833895788357!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDEwJzA2LjAiTiAxNcKwNTYnMTAuMiJF!5e0!3m2!1sen!2scz!4v1719500000000!5m2!1sen!2scz"
               width="100%"
               height="100%"
               style={{ border: 0 }}
               allowFullScreen={true}
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              title="Location of Klučov 78"
+              title="Location of Klučov 78, 675 52 Klučov"
             ></iframe>
           </div>
         </div>

@@ -148,7 +148,7 @@ export const translations = {
     },
     addressHeading: { cs: "Adresa sídla", en: "Registered Office Address" },
     address: {
-      line1: { cs: "Klučov 78", en: "Klučov 78" },
+      line1: { cs: "Klučov 40", en: "Klučov 40" },
       line2: { cs: "675 52 Klučov", en: "675 52 Klučov" },
     },
     form: {
