@@ -19,7 +19,7 @@ export default function IntroSection() {
   }
 
   return (
-    <section id="intro" className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
+    <section id="intro" className="container mx-auto px-4 pt-24 pb-12 md:px-6 lg:py-16 mt-16">
       <div className="grid gap-8 md:grid-cols-2 items-center">
         <div className="flex justify-center md:justify-start">
           <Image

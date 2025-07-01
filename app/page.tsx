@@ -1,5 +1,4 @@
 import Header from "@/components/header"
-import HeroSlider from "@/components/hero-slider"
 import IntroSection from "@/components/intro-section" // New import
 import ServicesSection from "@/components/services-section"
 import PropertyAppraisalsSection from "@/components/property-appraisals-section"
@@ -15,8 +14,7 @@ export default function Home() {
       <div className="flex min-h-screen flex-col">
         <Header />
         <main className="flex-1">
-          <HeroSlider />
-          <IntroSection /> {/* New section added here */}
+          <IntroSection /> {/* This will now be the first section after the header */}
           <ServicesSection />
           <PropertyAppraisalsSection />
           <QualificationsSection />
