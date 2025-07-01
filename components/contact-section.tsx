@@ -12,6 +12,7 @@ import Link from "next/link"
 import { useActionState } from "react"
 import { submitContactForm } from "@/app/contact/action"
 import { toast } from "@/hooks/use-toast"
+import { useEffect } from "react" // Import useEffect
 
 export default function ContactSection() {
   const { locale, t } = useLocale()
@@ -21,21 +22,21 @@ export default function ContactSection() {
   const formInfo = t("contact", "form") as any
 
   // Display toast messages based on the action state
-  if (state?.success) {
-    toast({
-      title: "Success!",
-      description: state.message,
-      variant: "default",
-    })
-    state.success = false // Reset to prevent re-triggering
-  } else if (state?.error) {
-    toast({
-      title: "Error!",
-      description: state.message,
-      variant: "destructive",
-    })
-    state.error = false // Reset to prevent re-triggering
-  }
+  useEffect(() => {
+    if (state?.success) {
+      toast({
+        title: "Success!",
+        description: state.message,
+        variant: "default",
+      })
+    } else if (state?.error) {
+      toast({
+        title: "Error!",
+        description: state.message,
+        variant: "destructive",
+      })
+    }
+  }, [state]) // Depend on the state object
 
   return (
     <section id="contact" className="container mx-auto px-4 py-12 md:px-6 lg:py-16">
