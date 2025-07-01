@@ -3,6 +3,9 @@
 import { Resend } from "resend"
 import { z } from "zod"
 
+// Log the API key to see if it's being picked up
+console.log("RESEND_API_KEY in action.ts:", process.env.RESEND_API_KEY ? "****** (present)" : "undefined (missing)")
+
 const schema = z.object({
   nameSurname: z.string().min(3, { message: "Jméno musí mít alespoň 3 znaky." }),
   phone: z.string().optional(),
@@ -11,8 +14,9 @@ const schema = z.object({
   subjectValuation: z.string().optional(),
   purposeValuation: z.string().optional(),
   note: z.string().optional(),
-  personalDataConsent: z.boolean().refine((val) => val === true, {
-    message: "Je nutné souhlasit se zpracováním osobních údajů.",
+  // Checkbox value is 'on' when checked, undefined when unchecked in FormData
+  personalDataConsent: z.literal("on", {
+    errorMap: () => ({ message: "Je nutné souhlasit se zpracováním osobních údajů." }),
   }),
 })
 
@@ -31,24 +35,23 @@ export async function submitContactForm(prevState: any, formData: FormData) {
     subjectValuation: formData.get("subjectValuation"),
     purposeValuation: formData.get("purposeValuation"),
     note: formData.get("note"),
-    personalDataConsent: formData.get("personalDataConsent") === "true",
+    personalDataConsent: formData.get("personalDataConsent"), // Get raw value 'on' or undefined
   })
 
   if (!validatedFields.success) {
-    console.log(validatedFields.error.flatten().fieldErrors)
+    console.log("Validation errors:", validatedFields.error.flatten().fieldErrors)
     return {
       errors: validatedFields.error.flatten().fieldErrors,
       message: "Chyba při odesílání. Zkontrolujte prosím vyplněná pole.",
     }
   }
 
-  const { nameSurname, phone, email, propertyAddress, subjectValuation, purposeValuation, note, personalDataConsent } =
-    validatedFields.data
+  const { nameSurname, phone, email, propertyAddress, subjectValuation, purposeValuation, note } = validatedFields.data
 
   try {
     // In preview/dev without an API key we just log the email payload
     if (!resend) {
-      console.log("📬 [DEV] Email payload:", {
+      console.log("📬 [DEV] Email payload (simulated send):", {
         nameSurname,
         phone,
         email,
@@ -56,7 +59,7 @@ export async function submitContactForm(prevState: any, formData: FormData) {
         subjectValuation,
         purposeValuation,
         note,
-        personalDataConsent,
+        personalDataConsent: true, // Assume true for simulation if validation passed
       })
       return {
         success: true,
@@ -76,19 +79,19 @@ export async function submitContactForm(prevState: any, formData: FormData) {
       <p><strong>Předmět ocenění:</strong> ${subjectValuation || "Nezadáno"}</p>
       <p><strong>Účel ocenění:</strong> ${purposeValuation || "Nezadáno"}</p>
       <p><strong>Poznámka:</strong> ${note || "Nezadáno"}</p>
-      <p><strong>Souhlas se zpracováním osobních údajů:</strong> ${personalDataConsent ? "Ano" : "Ne"}</p>
-    `,
+      <p><strong>Souhlas se zpracováním osobních údajů:</strong> Ano</p>
+    `, // Consent is guaranteed true by schema validation
     })
 
     if (error) {
-      console.error("Resend error:", error)
+      console.error("Resend API error:", error)
       return { error: "Nepodařilo se odeslat email. Zkuste to prosím znovu." }
     }
 
     console.log("Email sent successfully:", data)
     return { success: true, message: "Vaše zpráva byla úspěšně odeslána!" }
   } catch (error) {
-    console.error("Unexpected error:", error)
+    console.error("Unexpected error during form submission:", error)
     return { error: "Došlo k neočekávané chybě. Zkuste to prosím znovu." }
   }
 }

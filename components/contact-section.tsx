@@ -12,7 +12,7 @@ import Link from "next/link"
 import { useActionState } from "react"
 import { submitContactForm } from "@/app/contact/action"
 import { toast } from "@/hooks/use-toast"
-import { useEffect } from "react" // Import useEffect
+import { useEffect } from "react"
 
 export default function ContactSection() {
   const { locale, t } = useLocale()
@@ -23,6 +23,7 @@ export default function ContactSection() {
 
   // Display toast messages based on the action state
   useEffect(() => {
+    console.log("ContactSection state updated:", state) // Log state changes
     if (state?.success) {
       toast({
         title: "Success!",
@@ -135,7 +136,7 @@ export default function ContactSection() {
                 <Textarea id="note" name="note" placeholder={formInfo.note[locale]} className="min-h-[100px]" />
               </div>
               <div className="flex items-center space-x-2">
-                <Checkbox id="personal-data-consent" name="personalDataConsent" required value="true" />
+                <Checkbox id="personal-data-consent" name="personalDataConsent" required value="on" />
                 <Label htmlFor="personal-data-consent">
                   {formInfo.personalDataConsent[locale].split(formInfo.privacyPolicyLinkText[locale])[0]}
                   <Link
