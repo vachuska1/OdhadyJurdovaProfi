@@ -122,17 +122,17 @@ export const translations = {
       {
         cs: "Diplom VŠ",
         en: "DIPLOMA from university",
-        file: "/docs/diplom.pdf",
+        file: "/docs/DIPLOM.pdf",
       },
       {
         cs: "Osvědčení „Oceňování nemovitostí“",
         en: "Certificate “Property Valuation”",
-        file: "/docs/osvedceni.pdf",
+        file: "/docs/KURZ.pdf",
       },
       {
         cs: "Živnostenské oprávnění",
         en: "Trade License",
-        file: "/docs/zivnostensky-rejstrik.pdf",
+        file: "/docs/ZIVNOST.pdf",
       },
     ],
   },
